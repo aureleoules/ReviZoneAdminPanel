@@ -20,7 +20,7 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="user in users">
-                                    <td>{{user.pseudo}}</td>
+                                    <td><a href="#/edit/user/{{user.pseudo}}">{{user.pseudo}}</a></td>
                                     <td>{{user.name}}</td>
                                     <td>{{user.email}}</td>
                                     <td>{{momentjs(user.createdAt)}}</td>

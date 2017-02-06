@@ -1,0 +1,45 @@
+<section id="home" class="home">
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <h3>Informations personnelles:</h3>
+            <div class="form-group">
+                Nom <input type="text" name="" class="form-control" ng-model="editedUser.name">
+            </div>
+            <div class="form-group">
+                Pseudo <input type="text" name="" class="form-control" ng-model="editedUser.pseudo">
+            </div>
+            <div class="form-group">
+                Email <input type="text" name="" class="form-control" ng-model="editedUser.email">
+            </div>
+            <div class="form-group">
+                Role <input type="text" name="" class="form-control" ng-model="editedUser.role">
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div class="form-group">
+                <h3>Informations scolaire:</h3>
+                <div class="form-group">
+                    Code Postal <input type="text" name="" class="form-control" ng-model="editedUser.scolaire.code_postal">
+                </div>
+                <div class="form-group">
+                    Etablissement <input type="text" name="" class="form-control" ng-model="editedUser.scolaire.etablissement">
+                </div>
+                <div class="form-group">
+                    Classe <input type="text" name="" class="form-control" ng-model="editedUser.scolaire.classe">
+                </div>
+                <div class="form-group">
+                    Numero de classe <input type="text" name="" class="form-control" ng-model="editedUser.scolaire.numero_classe">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <pre>{{editedUser | json}}</pre>
+            </div>
+            <div class="form-group">
+                <a href="" class="btn btn-primary btn-large btn-block" ng-click="saveUser()">Enregistrer</a>
+            </div>
+        </div>
+    </div>
+</section>

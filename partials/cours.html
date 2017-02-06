@@ -23,7 +23,7 @@
                             </thead>
                             <tbody>
                                 <tr ng-init="_idLimit = 5" ng-repeat="cours in listCours">
-                                    <td>{{cours.auteur}}</td>
+                                    <td><a href="#/edit/user/{{cours.auteur}}">{{cours.auteur}}</a></td>
                                     <td>{{cours.classe}}</td>
                                     <td>{{cours.matiere}}</td>
                                     <td>{{cours.chapitre}}</td>

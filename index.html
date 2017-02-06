@@ -9,7 +9,7 @@
     <meta name="author" content="Aurèle Oulès">
     <meta name="keywords" content="cours, revizone, revi, zone, ameliorer, boost, facilement, moyenne, ecole, lycee, college, gratuit, gratuitement, note, aurele, oules, amis">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="fav.ico">
+    <link rel="shortcut icon" href="favicon.ico">
 
     <script src="build/js/scripts.js" charset="utf-8"></script>
     <link rel="stylesheet" href="build/css/styles.css">
@@ -28,19 +28,21 @@
                 <span class="menu-icon glyphicon glyphicon-transfer"></span>
               </a>
                 </li>
-                <li class="sidebar-title"><span>MENU</span></li>
-                <li class="sidebar-list">
-                    <a href="#/dashboard">Tableau de bord <span class="menu-icon fa fa-tachometer"></span></a>
-                </li>
-                <li class="sidebar-list">
-                    <a href="#/dashboard/users">Utilisateurs <span class="menu-icon fa fa-user"></span></a>
-                </li>
-                <li class="sidebar-list">
-                    <a href="#/dashboard/cours">Cours <span class="menu-icon fa fa-book"></span></a>
-                </li>
-                <li class="sidebar-list">
-                    <a href="#/todo">À faire <span class="menu-icon fa fa-list-alt"></span></a>
-                </li>
+                <div ng-show="isAuthenticated()">
+                    <li class="sidebar-title"><span>MENU</span></li>
+                    <li class="sidebar-list">
+                        <a href="#/dashboard">Tableau de bord <span class="menu-icon fa fa-tachometer"></span></a>
+                    </li>
+                    <li class="sidebar-list">
+                        <a href="#/dashboard/users">Utilisateurs <span class="menu-icon fa fa-user"></span></a>
+                    </li>
+                    <li class="sidebar-list">
+                        <a href="#/dashboard/cours">Cours <span class="menu-icon fa fa-book"></span></a>
+                    </li>
+                    <li class="sidebar-list">
+                        <a href="#/todo">À faire <span class="menu-icon fa fa-list-alt"></span></a>
+                    </li>
+                </div>
             </ul>
             <div class="sidebar-footer">
                 <div class="col-xs-5">
@@ -65,8 +67,8 @@
                     <div class="col-xs-12">
                         <div class="user pull-right">
                             <div ng-show="isAuthenticated()" style="margin-top: 13px">
-                                <a href="">{{user.name}}</a>
-                                <a href="" ng-click="logout()" class="btn btn-danger">DECONNEXION<a>
+                                <a href="">{{user.name}} </a>
+                                <a href="" style="margin-left: 5px"ng-click="logout()" class="btn btn-danger">DECONNEXION<a>
                             </div>
                         </div>
                         <div class="meta">
