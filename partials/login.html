@@ -1,0 +1,24 @@
+<section id="register" class="mg-top-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-center-block col-sm-12">
+                <form ng-submit="login()">
+                    <div class="login-form" style="margin-top: 25%">
+                        <h3 class="text-primary">Connexion</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-control login-field" value="" ng-model="user.pseudo" placeholder="Pseudo ou email" id="login-name">
+                            <label class="login-field-icon fui-user" for="login-name"></label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control login-field" value="" ng-model="user.password" placeholder="Mot de passe" id="login-pass">
+                            <label class="login-field-icon fui-lock" for="login-pass"></label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="login()" href="">Se connecter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

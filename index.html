@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="revizone">
+
+<head>
+    <meta charset="utf-8">
+    <title ng-bind="'ReviZone - ' + title">ReviZone</title>
+    <meta http-equiv="content-Language" content="fr">
+    <meta name="description" content="ReviZone vous permet d'améliorer vos notes très facilement et entièrement gratuitement !" />
+    <meta name="author" content="Aurèle Oulès">
+    <meta name="keywords" content="cours, revizone, revi, zone, ameliorer, boost, facilement, moyenne, ecole, lycee, college, gratuit, gratuitement, note, aurele, oules, amis">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="fav.ico">
+
+    <script src="build/js/scripts.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="build/css/styles.css">
+    <meta name="google-site-verification" content="h4xGnbqcWzvJjke_WFJfZQ5fde0RfqtUSCtfjqFJ-XQ" />
+</head>
+
+<body ng-controller="appCtrl">
+    <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar">
+                <li class="sidebar-main">
+                    <a ng-click="toggleSidebar()">
+                Tableau de bord
+                <span class="menu-icon glyphicon glyphicon-transfer"></span>
+              </a>
+                </li>
+                <li class="sidebar-title"><span>MENU</span></li>
+                <li class="sidebar-list">
+                    <a href="#/dashboard">Tableau de bord <span class="menu-icon fa fa-tachometer"></span></a>
+                </li>
+                <li class="sidebar-list">
+                    <a href="#/dashboard/users">Utilisateurs <span class="menu-icon fa fa-user"></span></a>
+                </li>
+                <li class="sidebar-list">
+                    <a href="#/todo">À faire <span class="menu-icon fa fa-task"></span></a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="col-xs-5">
+                    <a href="https://www.revizone.fr" target="_blank">
+                ReviZone
+              </a>
+                </div>
+                <div class="col-xs-6">
+                    <a href="https://www.revizone.fr/#/contact" target="_blank">
+                Nous contacter
+              </a>
+                </div>
+            </div>
+        </div>
+        <!-- End Sidebar -->
+
+        <div id="content-wrapper">
+            <div class="page-content">
+
+                <!-- Header Bar -->
+                <div class="row header">
+                    <div class="col-xs-12">
+                        <div class="user pull-right">
+                            <div ng-show="isAuthenticated()" style="margin-top: 13px">
+                                <a href="">{{user.name}}</a>
+                                <a href="" ng-click="logout()" class="btn btn-danger">DECONNEXION<a>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <div class="page">
+                                Tableau de bord
+                            </div>
+                            <div class="breadcrumb-links">
+                                <a href="https://www.revizone.fr" target="_blank">ReviZone.fr</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Header Bar -->
+
+                <!-- Main Content -->
+                <div autoscroll="true" ng-view></div>
+
+            </div>
+            <!-- End Page Content -->
+        </div>
+        <!-- End Content Wrapper -->
+    </div>
+    <!-- End Page Wrapper -->
+    <!--Scripts-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</body>
+
+</html>
