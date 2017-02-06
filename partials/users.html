@@ -2,44 +2,43 @@
     <div class="row">
         <div class="col-lg-12 col-md-6 col-xs-12">
             <rd-widget>
-                <rd-widget-header icon="fa-users" title="Users">
-                    <input type="text" placeholder="Search" class="form-control input-sm" />
+                <rd-widget-header icon="fa-users" title="Utilisateurs ({{stats.users.length}})">
+                    <!-- <input type="text" placeholder="Search" class="form-control input-sm" /> -->
                 </rd-widget-header>
                 <rd-widget-body classes="medium no-padding">
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="text-center">ID</th>
-                                    <th>Username</th>
+                                    <th>Pseudo</th>
+                                    <th>Nom</th>
+                                    <th>Email</th>
+                                    <th>Créer le</th>
+                                    <th>Modifié le</th>
                                     <th>Role</th>
-                                    <th>Account</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td>Joe Bloggs</td>
-                                    <td>Super Admin</td>
-                                    <td>AZ23045</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">2</td>
-                                    <td>Timothy Hernandez</td>
-                                    <td>Admin</td>
-                                    <td>AU24783</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">3</td>
-                                    <td>Joe Bickham</td>
-                                    <td>User</td>
-                                    <td>AM23781</td>
+                                <tr ng-repeat="user in users">
+                                    <td>{{user.pseudo}}</td>
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{momentjs(user.createdAt)}}</td>
+                                    <td>{{momentjs(user.updatedAt)}}</td>
+                                    <td>{{user.role}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </rd-widget-body>
-                <rd-widget>
+                <rd-widget-footer>
+                    <ul class="pagination pagination-sm">
+                        <li ng-class="{'disabled': currentPage === 1}"><a ng-click="searchLess()" href="">&laquo;</a></li>
+                        <li ng-class="{'active': currentPage === n}" ng-repeat="n in [] | range:numberOfPages() +1"><a href="" ng-click="getUsers(n)">{{n}}</a></li>
+                        <li ng-class="{'disabled': currentPage === numberOfPages()}"><a href="" ng-click="searchMore()">&raquo;</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </rd-widget-footer>
         </div>
     </div>
 </section>

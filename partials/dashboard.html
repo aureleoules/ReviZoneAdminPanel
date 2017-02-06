@@ -1,28 +1,35 @@
 <section id="dashboard" class="dashboard">
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-xs-12">
-            <rd-widget>
-                <rd-widget-body>
-                    <div class="widget-icon green pull-left">
-                        <i class="fa fa-users"></i>
-                    </div>
-                    <a href="#/users">
-                        <div class="title">{{stats.users.length}}</div>
-                        <div class="comment">Utilisateurs</div>
-                    </a>
-                </rd-widget-body>
-            </rd-widget>
+        <div class="col-md-12">
+            <h1 class="text-lefts">Serveur <span ng-show="server.success" class="text-success">ALLUMÉ</span><span ng-hide="server.success" class="text-danger">ÉTEINT</span></h1>
         </div>
-        <div class="col-lg-6 col-md-6 col-xs-12">
-            <rd-widget>
-                <rd-widget-body>
-                    <div class="widget-icon red pull-left">
-                        <i class="fa fa-tasks"></i>
-                    </div>
-                    <div class="title">{{stats.cours.length}}</div>
-                    <div class="comment">Cours</div>
-                </rd-widget-body>
-            </rd-widget>
+        <div ng-show="server.success">
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <rd-widget>
+                    <rd-widget-body>
+                        <div class="widget-icon green pull-left">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <a href="#/dashboard/users">
+                            <div class="title">{{stats.users.length}}</div>
+                            <div class="comment">Utilisateurs</div>
+                        </a>
+                    </rd-widget-body>
+                </rd-widget>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <rd-widget>
+                    <rd-widget-body>
+                        <div class="widget-icon red pull-left">
+                            <i class="fa fa-tasks"></i>
+                        </div>
+                        <a href="#/dashboard/cours">
+                            <div class="title">{{stats.cours.length}}</div>
+                            <div class="comment">Cours</div>
+                        </a>
+                    </rd-widget-body>
+                </rd-widget>
+            </div>
         </div>
     </div>
 </section>
