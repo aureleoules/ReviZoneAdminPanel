@@ -1,0 +1,39 @@
+<section id="todo" class="todo">
+    <div class="row">
+        <div class="col-md-12 ">
+            <form ng-submit="createTask()">
+                <div class="form-group">
+                    <label>Titre de la tâche:</label>
+                    <input ng-model="task.titre" class="form-control" placeholder="Titre de la tâche" type="text" name="" value="">
+                </div>
+                <div class="form-group">
+                    <label>Description de la tâche</label>
+                    <textarea ng-model="task.description" name="name" class="form-control" placeholder="Description de la tâche" rows="8" cols="80"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Durée moyenne de la tâche <small>(facultatif)</small></label>
+                    <select ng-model="task.duree" class="form-control" name="">
+                        <option>Rapide</option>
+                        <option>Moyen</option>
+                        <option>Long</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Difficulté de la tâche <small>(facultatif)</small></label>
+                    <select ng-model="task.difficultee" class="form-control" name="">
+                    <option>Facile</option>
+                    <option>Moyen</option>
+                    <option>Difficile</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <label>Commentaire: <small>(facultatif)</small></label>
+                    <input ng-model="task.commentaire" class="form-control" placeholder="Commentaire" type="text" name="" value="">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block">Créer la tâche</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

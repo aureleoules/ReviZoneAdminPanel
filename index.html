@@ -15,10 +15,8 @@
     <link rel="stylesheet" href="build/css/styles.css">
     <meta name="google-site-verification" content="h4xGnbqcWzvJjke_WFJfZQ5fde0RfqtUSCtfjqFJ-XQ" />
 </head>
-
 <body ng-controller="appCtrl">
     <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
-
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar">
@@ -29,7 +27,7 @@
               </a>
                 </li>
                 <div ng-show="isAuthenticated()">
-                    <li class="sidebar-title"><span>MENU</span></li>
+                    <li class="sidebar-title"><span>GÉRER</span></li>
                     <li class="sidebar-list">
                         <a href="#/dashboard">Tableau de bord <span class="menu-icon fa fa-tachometer"></span></a>
                     </li>
@@ -39,8 +37,15 @@
                     <li class="sidebar-list">
                         <a href="#/dashboard/cours">Cours <span class="menu-icon fa fa-book"></span></a>
                     </li>
+                    <li class="sidebar-title"><span>TÂCHES</span></li>
                     <li class="sidebar-list">
-                        <a href="#/todo">À faire <span class="menu-icon fa fa-list-alt"></span></a>
+                        <a href="#/todo/create">Créer <span class="menu-icon fa fa-plus"></span></a>
+                    </li>
+                    <li class="sidebar-list">
+                        <a href="#/todo">Liste <span class="menu-icon fa fa-list-alt"></span></a>
+                    </li>
+                    <li class="sidebar-list">
+                        <a href="#/todo/history">Historique <span class="menu-icon fa fa-history"></span></a>
                     </li>
                 </div>
             </ul>
@@ -68,7 +73,7 @@
                         <div class="user pull-right">
                             <div ng-show="isAuthenticated()" style="margin-top: 13px">
                                 <a href="">{{user.name}} </a>
-                                <a href="" style="margin-left: 5px"ng-click="logout()" class="btn btn-danger">DECONNEXION<a>
+                                <a href="" style="margin-left: 5px; margin-right: 5px"ng-click="logout()" class="btn btn-danger">DECONNEXION<a>
                             </div>
                         </div>
                         <div class="meta">

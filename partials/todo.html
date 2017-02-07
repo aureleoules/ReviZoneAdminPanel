@@ -1,0 +1,24 @@
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Tâches: <small>({{tasks.length}})</small></h1>
+            <div class="form-group" ng-show="tasks.length > 0">
+                Trier par:
+                <select class="" ng-model="filter" ng-init="filter = '-createdAt'" name="">
+                    <option value="-createdAt">Date (récent)</option>
+                    <option value="createdAt">Date (ancien)</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6" ng-repeat="task in tasks | orderBy:filter">
+            <div class="well" ng-class="{'bg-default': task.duree == null, 'bg-short': task.duree == 'Rapide', 'bg-medium': task.duree == 'Moyen', 'bg-long': task.duree == 'Long'}">
+                <h3>{{task.titre}}</h3>
+                <p>{{task.description}}</p>
+                <p class="text-primary"><small>{{task.commentaire}}<span style="float: right; margin-left: 5px" class="badge">{{task.difficultee}}</span><span style="float: right"class="badge">{{task.duree}}</span></small></p>
+                <button class="btn btn-success" ng-click="terminer(task._id)">Terminer</button>
+                <button class="btn btn-danger" ng-click="remove(task._id)">Supprimer</button>
+                <span style="float: right; margin-right: 10px" class="text-primary"><small>Par @{{task.auteur}}</small></span>
+            </div>
+        </div>
+    </div>
+</section>
